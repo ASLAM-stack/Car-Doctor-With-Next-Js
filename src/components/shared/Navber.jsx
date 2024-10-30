@@ -1,7 +1,10 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineShopping } from "react-icons/ai";
 import { IoIosSearch } from "react-icons/io";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
  
 
@@ -28,8 +31,22 @@ const Navber = () => {
             path:'/contact'
         },
     ]
+    const [screen,setScreen] = useState(0)
+    useEffect(()=>{
+      const handleResize = () => setScreen(window.innerWidth);
+
+    // Set the initial screen size
+    handleResize();
+
+    // Add event listener on mount
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+    },[screen])
+    
     return (
-        <div className="navbar bg-base-100 border-b-2">
+        <div className="navbar bg-base-100  ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,7 +67,7 @@ const Navber = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                {
-                navItems?.map(item => <Link className="text-base font-semibold hover:bg-none hover:text-primary transition duration-300 p-1  " href={item.path} key={item.path}>{item.title}</Link>)
+                navItems?.map(item => <Link className="text-base font-semibold hover:bg-none hover:text-primary transition duration-300 p-1  glass-effect" href={item.path} key={item.path}>{item.title}</Link>)
                }
             </ul>
           </div>
@@ -71,7 +88,11 @@ const Navber = () => {
             <IoIosSearch className="text-xl text-[#444444]"/>
             
             </div>
-          <a className="btn btn-primary btn-outline  hover:bg-primary hover:!text-white btn-sm md:btn-md ">Appointment</a>
+          <a className="btn btn-primary btn-outline  hover:bg-primary hover:!text-white btn-sm md:btn-md ">
+            {
+              screen < 350 ?<FaRegCalendarAlt className="text-lg text-primary hover:text-white"/> : ' Appointment '
+            }
+           </a>
         </div>
       </div>
     );
