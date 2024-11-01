@@ -1,4 +1,5 @@
 import React from 'react';
+import Contact_item from './Component/Contact_item';
 
 const Contact = () => {
     const items = [
@@ -22,8 +23,11 @@ const Contact = () => {
         }
     ]
     return (
-        <div>
-          
+        <div className='bg-black h-[250px] flex items-center justify-around flex-wrap rounded-lg mt-28
+        '>
+          {
+            items.map(item => <Contact_item key={item.id} item={item}/>)
+          }
         </div>
     );
 };
