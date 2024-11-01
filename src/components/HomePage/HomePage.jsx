@@ -1,6 +1,7 @@
 import About from "./Components/About/About";
 import Banner from "./Components/Banner/Banner";
 import Contact from "./Components/Contact/Contact";
+import Products from "./Components/Products/Products";
 import Services from "./Components/Services/Services";
 
  
@@ -12,6 +13,7 @@ const HomePage = () => {
             <About/>
             <Services/>
             <Contact/>
+            <Products/>
         </div>
     );
 };
