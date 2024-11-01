@@ -9,9 +9,13 @@ const Services = () => {
             <div className='container   mt-16 grid gap-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center justify-items-center mx-auto p-2 
             '>
                  {
-                    services.map(item => <Service_Card key={item.id} item={item}/>)
+                    services.map(item => <Service_Card key={item._id} item={item}/>)
                  }
+                 
             </div>
+            <div className='w-full text-center mt-12'>
+                    <a href="#" className='btn btn-outline btn-primary hover:!text-white'>More Service</a>
+                 </div>
         </div>
     );
 };
