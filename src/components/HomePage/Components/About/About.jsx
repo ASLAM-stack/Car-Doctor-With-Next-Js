@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div className='mt-52 container mx-auto  '>
+        <div className='md:mt-52 mt-16 container mx-auto  '>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-5 w-full  max-h-max'>
                 <div className='about_img w-full  justify-center max-h-max p-2 md:p-0 order-2 md:order-1'>
                     <div className='md:relative md:h-[450px] h-[800px]'>

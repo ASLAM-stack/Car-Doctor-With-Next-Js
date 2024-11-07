@@ -3,6 +3,7 @@ import Banner from "./Components/Banner/Banner";
 import Contact from "./Components/Contact/Contact";
 import Products from "./Components/Products/Products";
 import Services from "./Components/Services/Services";
+import Team from "./Team/Team";
 
  
 
@@ -14,6 +15,7 @@ const HomePage = () => {
             <Services/>
             <Contact/>
             <Products/>
+            <Team/>
         </div>
     );
 };
