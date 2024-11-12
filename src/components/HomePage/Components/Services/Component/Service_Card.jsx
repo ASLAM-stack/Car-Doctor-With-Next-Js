@@ -10,7 +10,7 @@ const Service_Card = ({item}) => {
     <Image width={500} height={300} 
       src={img}
       alt={title}
-      className="rounded-xl"  />
+      className="rounded-xl aspect-video"  />
   </figure>
   <div className="card-body ">
     <h2 className="card-title font-bold text-[#444]">{title}</h2>
